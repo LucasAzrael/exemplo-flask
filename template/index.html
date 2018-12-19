@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>cadastro de usuários</title>
+    <style>
+        body{
+            padding: 5px 25px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Novo Usuario</h1>
+    <form action="/users" method="POST">
+        <input type="text" name="nome" placeholder="User">
+        <button>Salvar</button>
+    </form>
+    <h1>Usuários</h1>
+    {% if nomes %}
+        <ul>
+            {% for nome in nomes %}
+                <li>{{nome.user}}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Não existem usuários cadastrados</p>
+    {% endif %}
+
+</body>
+
+</html>
